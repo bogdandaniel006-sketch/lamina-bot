@@ -225,7 +225,11 @@ def main(argv):
     elif cmd == "preview":
         cmd_preview()
     elif cmd == "auth-url":
-        print(tiktok.auth_url())
+        url = tiktok.auth_url()
+        # Página que redirige a TikTok (el client key es público en el flujo OAuth; el secret nunca sale)
+        (config.ROOT / "docs" / "authorize.html").write_text(
+            f'<meta charset="utf-8"><meta http-equiv="refresh" content="0;url={url}"><a href="{url}">Autorizar TikTok</a>')
+        print("Abre: " + config.PAGES_BASE + "/authorize.html")
     elif cmd == "auth-code":
         tiktok.exchange_code(argv[2])
         print("Token guardado ✅")

@@ -28,7 +28,7 @@ jobs:
           git config user.name "lamina-bot"
           git config user.email "lamina-bot@users.noreply.github.com"
       - if: inputs.code == ''
-        run: python -m bot.main auth-url
+        run: python -m bot.main auth-url && git add -A && git commit -m "Enlace de autorización" && git push
       - if: inputs.code != ''
         run: python -m bot.main auth-code "$CODE"
         env:
