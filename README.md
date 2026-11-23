@@ -28,6 +28,6 @@ y lo deja como **borrador en tu bandeja de TikTok**. Tú solo abres la notificac
 - Fotos de referencia: `assets/refs/app_*.jpg` (capturas de tu web) y `assets/refs/style_*.jpg` (fotos tuyas de ejemplo, opcional).
 
 ## Secretos (Settings → Secrets and variables → Actions)
-`GEMINI_API_KEY`, `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TOKEN_KEY`.
+`GEMINI_API_KEY`, `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`.
 
 Coste: solo la API de Gemini (~2-3 €/mes con tope de gasto). GitHub Actions, Pages y la API de TikTok son gratis.

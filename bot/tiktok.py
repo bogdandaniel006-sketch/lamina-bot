@@ -16,10 +16,13 @@ SCOPES = "user.info.basic,video.upload,video.list"
 
 # ---------- token (guardado cifrado en el repo para poder renovarlo en cada ejecución) ----------
 def _fernet():
+    import base64, hashlib
     from cryptography.fernet import Fernet
-    if not config.TOKEN_KEY:
-        raise RuntimeError("Falta el secreto TOKEN_KEY")
-    return Fernet(config.TOKEN_KEY.encode())
+    secret = config.TOKEN_KEY or config.TIKTOK_CLIENT_SECRET
+    if not secret:
+        raise RuntimeError("Falta el secreto TIKTOK_CLIENT_SECRET")
+    # La clave de cifrado se deriva del client secret (que solo está en los secretos de GitHub)
+    return Fernet(base64.urlsafe_b64encode(hashlib.sha256(("lamina:" + secret).encode()).digest()))
 
 
 def save_token(tok: dict):
