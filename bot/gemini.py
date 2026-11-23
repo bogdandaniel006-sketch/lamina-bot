@@ -20,8 +20,31 @@ def client():
     return _client
 
 
-def _try_models(models, fn):
+def _discover(kind: str) -> list[str]:
+    """Pregunta a la API qué modelos hay y elige los más nuevos del tipo pedido."""
+    import re
+    try:
+        names = [m.name.split("/")[-1] for m in client().models.list()]
+    except Exception:
+        return []
+    def ver(n):
+        m = re.search(r"(\d+(?:\.\d+)?)", n)
+        return float(m.group(1)) if m else 0
+    bad = ("tts", "live", "audio", "embedding", "thinking", "exp", "native")
+    if kind == "image":
+        c = [n for n in names if "image" in n and "flash" in n and not any(b in n for b in bad)]
+        c.sort(key=lambda n: (ver(n), "lite" not in n, "preview" not in n), reverse=True)
+    else:
+        c = [n for n in names if n.startswith("gemini") and "flash" in n and "image" not in n and "lite" not in n
+             and not any(b in n for b in bad)]
+        c.sort(key=lambda n: (ver(n), "preview" not in n), reverse=True)
+    print(f"Modelos {kind} disponibles: {c[:5]}")
+    return c[:4]
+
+
+def _try_models(models, fn, kind="text"):
     last = None
+    models = list(models) + [m for m in _discover(kind) if m not in models]
     for m in models:
         m = m.strip()
         for attempt in range(2):
@@ -30,7 +53,7 @@ def _try_models(models, fn):
             except Exception as e:  # modelo inexistente, saturado, etc.
                 last = e
                 msg = str(e).lower()
-                if "not found" in msg or "404" in msg or "not supported" in msg:
+                if "not found" in msg or "404" in msg or "not supported" in msg or "no longer available" in msg:
                     break
                 time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"Ningún modelo funcionó: {last}")
@@ -46,7 +69,7 @@ def generate_json(prompt: str) -> dict:
         )
         return json.loads(r.text)
 
-    return _try_models(config.TEXT_MODELS, call)
+    return _try_models(config.TEXT_MODELS, call, 'text')
 
 
 def generate_image(prompt: str, references: list[Image.Image] | None = None) -> Image.Image:
@@ -66,4 +89,4 @@ def generate_image(prompt: str, references: list[Image.Image] | None = None) -> 
                     return Image.open(io.BytesIO(part.inline_data.data))
         raise RuntimeError("La respuesta no traía imagen")
 
-    return _try_models(config.IMAGE_MODELS, call)
+    return _try_models(config.IMAGE_MODELS, call, 'image')

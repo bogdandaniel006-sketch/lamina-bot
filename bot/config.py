@@ -14,8 +14,8 @@ POST_MINUTE = int(os.getenv("POST_MINUTE", "30"))
 SLIDES = 3
 
 # Modelos: se prueba en orden hasta que uno funcione (los nombres cambian con el tiempo)
-TEXT_MODELS = os.getenv("TEXT_MODELS", "gemini-3-flash,gemini-3-flash-preview,gemini-2.5-flash").split(",")
-IMAGE_MODELS = os.getenv("IMAGE_MODELS", "gemini-3.1-flash-image,gemini-3.1-flash-image-preview,gemini-2.5-flash-image").split(",")
+TEXT_MODELS = os.getenv("TEXT_MODELS", "gemini-3.8-flash").split(",")
+IMAGE_MODELS = os.getenv("IMAGE_MODELS", "gemini-3.1-flash-image").split(",")
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 TIKTOK_CLIENT_KEY = os.getenv("TIKTOK_CLIENT_KEY", "")
