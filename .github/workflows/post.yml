@@ -14,6 +14,7 @@ on:
 concurrency: lamina-bot
 permissions:
   contents: write
+  issues: write
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -42,3 +43,20 @@ jobs:
         run: python -m bot.main upload
       - if: always() && steps.prep.outputs.prepared == 'true'
         run: git add -A && (git diff --cached --quiet || git commit -m "Carrusel enviado a TikTok"); git pull --rebase && git push
+      - if: success() && steps.prep.outputs.prepared == 'true'
+        name: Avisar por email (issue de GitHub)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os
+          h = json.load(open("data/history.json"))[-1]
+          base = os.environ["PAGES_BASE"]
+          imgs = "".join(f'<img src="{base}/media/{h["id"]}/{i}.jpg" width="200"> ' for i in (1, 2, 3))
+          body = (f"📲 **Tienes un carrusel nuevo en TikTok.** Abre la app con @danidemiguel_ → Bandeja de entrada → "
+                  f"Notificaciones del sistema → *Edita tu vídeo antes de compartirlo*, y publícalo.\n\n"
+                  f"**Título:** {h['title']}\n\n{imgs}\n\n**Textos:** " + " / ".join(h["texts"]) +
+                  f"\n\n_Formato {h['format']} · escena {h['scene']} · gancho {h['hook']}_")
+          open("aviso.md", "w").write(body)
+          PY
+          gh issue create --title "📲 Carrusel listo para publicar - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md
