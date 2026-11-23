@@ -34,4 +34,4 @@ jobs:
         env:
           CODE: ${{ inputs.code }}
       - if: inputs.code != ''
-        run: git add -A && (git diff --cached --quiet || git commit -m "Token de TikTok guardado") && git push
+        run: git add -A && (git diff --cached --quiet || git commit -m "Token de TikTok guardado"); git pull --rebase && git push

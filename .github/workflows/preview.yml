@@ -24,4 +24,4 @@ jobs:
           git config user.name "lamina-bot"
           git config user.email "lamina-bot@users.noreply.github.com"
       - run: python -m bot.main preview
-      - run: git add -A && (git diff --cached --quiet || git commit -m "Vista previa") && git push
+      - run: git add -A && (git diff --cached --quiet || git commit -m "Vista previa"); git pull --rebase && git push

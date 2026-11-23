@@ -27,4 +27,4 @@ jobs:
           git config user.email "lamina-bot@users.noreply.github.com"
       - run: python -m bot.main metrics
       - if: always()
-        run: git add -A && (git diff --cached --quiet || git commit -m "Métricas actualizadas") && git push
+        run: git add -A && (git diff --cached --quiet || git commit -m "Métricas actualizadas"); git pull --rebase && git push

@@ -37,8 +37,8 @@ jobs:
       - id: prep
         run: python -m bot.main prepare ${{ inputs.force && '--force' || '' }}
       - if: steps.prep.outputs.prepared == 'true'
-        run: git add -A && (git diff --cached --quiet || git commit -m "Carrusel preparado") && git push
+        run: git add -A && (git diff --cached --quiet || git commit -m "Carrusel preparado"); git pull --rebase && git push
       - if: steps.prep.outputs.prepared == 'true'
         run: python -m bot.main upload
       - if: always() && steps.prep.outputs.prepared == 'true'
-        run: git pull --rebase && git add -A && (git diff --cached --quiet || git commit -m "Carrusel enviado a TikTok") && git push
+        run: git add -A && (git diff --cached --quiet || git commit -m "Carrusel enviado a TikTok"); git pull --rebase && git push

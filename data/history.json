@@ -210,5 +210,24 @@
    "shares": 0
   },
   "seed": true
+ },
+ {
+  "id": "20261123-2059",
+  "local_date": "2026-11-23",
+  "created_at": "2026-11-23T20:00:15+00:00",
+  "texts": [
+   "Cómo saqué un 10 en la PAU 💀🎯",
+   "TIP 1: Haz un croquis a mano antes de medir nada 📝🧠",
+   "TIP 2: Haz láminas en danidemiguel.com sin reglas ni imprimir 💻🔥"
+  ],
+  "title": "El secreto para sacar un 10 en Dibujo Técnico 📐💻",
+  "caption": "Ahorra tiempo y deja de gastar dinero imprimiendo láminas para cada examen. Practica gratis en danidemiguel.com directo desde el ordenador. #dibujotecnico #2bachillerato #PAU #selectividad #bachillerato",
+  "format": "tips",
+  "scene": "cama",
+  "hook": "humor",
+  "publish_id": null,
+  "status": "SEND_TO_USER_INBOX",
+  "metrics": null,
+  "test": true
  }
 ]
