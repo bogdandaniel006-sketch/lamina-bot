@@ -1,0 +1,4 @@
+google-genai>=1.0
+pillow>=11
+requests>=2.31
+cryptography>=42

@@ -1,0 +1,214 @@
+[
+ {
+  "id": "seed-0910",
+  "local_date": "2026-10-09",
+  "format": "problema_solucion",
+  "scene": "biblioteca",
+  "hook": "dolor",
+  "title": "La web que me ahorra horas en dibujo técnico 📐💻",
+  "caption": "¿Y si pudieras hacer tus láminas de dibujo técnico directamente desde el ordenador?",
+  "texts": [
+   "Dibujo técnico es muy difícil",
+   "Yo haciendo todo sin imprimir, ni lápiz ni reglas 😎😎 encima GRATIS"
+  ],
+  "metrics": {
+   "views": 67900,
+   "likes": 2956,
+   "comments": 18,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1022",
+  "local_date": "2026-10-22",
+  "format": "tips",
+  "scene": "escritorio_dia",
+  "hook": "resultado",
+  "title": "ASI he sacado UN 10 en la PAU de Dibujo Tecnico, sigue estos tips 📐💻",
+  "caption": "Practica, practica y practica. Y como lo puedes hacer más rápido??",
+  "texts": [
+   "Como he sacado un 10 en la PAU de DIBUJO TÉCNICO 📐",
+   "TIP 1: No te limites a estudiar la teoría, practica ejercicios de otros años sin parar",
+   "TIP 2: Repite el mismo ejercicio al día siguiente sin mirar y con temporizador",
+   "TIP 3: No pierdas el tiempo con reglas y decenas de hojas, practica ejercicios de PAU en esta web"
+  ],
+  "metrics": {
+   "views": 26700,
+   "likes": 1581,
+   "comments": 1,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1018",
+  "local_date": "2026-10-18",
+  "format": "antes_despues",
+  "scene": "escritorio_noche",
+  "hook": "humor",
+  "title": "Danidemiguel.com no se que haria sin ti",
+  "caption": "Desde que uso esta web, estudiando 2 horas puedo sacar un 10",
+  "texts": [
+   "Que pereza estudiar dibujo técnico",
+   "Que ganas de estudiar dibujo técnico"
+  ],
+  "metrics": {
+   "views": 18700,
+   "likes": 922,
+   "comments": 2,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1015",
+  "local_date": "2026-10-15",
+  "format": "problema_solucion",
+  "scene": "escritorio_noche",
+  "hook": "dolor",
+  "title": "La web que me ahorra horas en Dibujo Tecnico 💻📐",
+  "caption": "¿Y si pudieras hacer tus láminas de dibujo técnico directamente desde el ordenador?",
+  "texts": [
+   "Dibujo técnico es muy difícil",
+   "Yo haciendo todo sin imprimir, ni lápiz ni reglas 😎😎 encima GRATIS"
+  ],
+  "metrics": {
+   "views": 12600,
+   "likes": 404,
+   "comments": 10,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1010b",
+  "local_date": "2026-10-10",
+  "format": "otro",
+  "scene": null,
+  "hook": "resultado",
+  "title": "",
+  "caption": "Pruebala en danidemiguel.com y me dices la nota de tu proximo examen",
+  "texts": [
+   "Pruébala y me dices la nota de tu próximo examen"
+  ],
+  "metrics": {
+   "views": 12300,
+   "likes": 390,
+   "comments": 1,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1010a",
+  "local_date": "2026-10-10",
+  "format": "otro",
+  "scene": null,
+  "hook": "resultado",
+  "title": "",
+  "caption": "Desde que uso esta herramienta, tengo todo el tema estudiado en 1 hora",
+  "texts": [],
+  "metrics": {
+   "views": 4889,
+   "likes": 128,
+   "comments": 1,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1011",
+  "local_date": "2026-10-11",
+  "format": "otro",
+  "scene": null,
+  "hook": "dolor",
+  "title": "",
+  "caption": "Antes me tiraba horas haciendo laminas de dibujo tecnico para los examenes",
+  "texts": [],
+  "metrics": {
+   "views": 4630,
+   "likes": 137,
+   "comments": 0,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1014",
+  "local_date": "2026-10-14",
+  "format": "video",
+  "scene": null,
+  "hook": "pregunta",
+  "title": "",
+  "caption": "¿Y si pudieras hacer tus ejercicios de dibujo técnico sin reglas ni compás?",
+  "texts": [],
+  "metrics": {
+   "views": 4294,
+   "likes": 77,
+   "comments": 5,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1021",
+  "local_date": "2026-10-21",
+  "format": "otro",
+  "scene": "escritorio_noche",
+  "hook": "pregunta",
+  "title": "POV: descubres esto para Dibujo Técnico",
+  "caption": "¿Y si pudieras practicar dibujo técnico sin imprimir láminas?",
+  "texts": [
+   "DIBUJO TÉCNICO AHORA EN DIGITAL",
+   "danidemiguel.com",
+   "Practica GRATIS antes del examen"
+  ],
+  "metrics": {
+   "views": 3524,
+   "likes": 85,
+   "comments": 3,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1024",
+  "local_date": "2026-10-24",
+  "format": "problema_solucion",
+  "scene": "biblioteca",
+  "hook": "pregunta",
+  "title": "Ojalá haber descubierto esto antes",
+  "caption": "Para quien lo necesite 😎😎: danidemiguel.com",
+  "texts": [
+   "¿¿Alguien sabe como estudiar dibujo técnico en bachillerato?? 💀"
+  ],
+  "metrics": {
+   "views": 2837,
+   "likes": 87,
+   "comments": 0,
+   "shares": 0
+  },
+  "seed": true
+ },
+ {
+  "id": "seed-1101",
+  "local_date": "2026-11-01",
+  "format": "otro",
+  "scene": "escritorio_dia",
+  "hook": "resultado",
+  "title": "Con esto he sacado un 10 en Dibujo Técnico 😎",
+  "caption": "#dibujotecnico #2bachillerato #PAU #estudio #estres",
+  "texts": [
+   "danidemiguel.com",
+   "Practica todos tus ejercicios en minutos con esto 😎"
+  ],
+  "metrics": {
+   "views": 2746,
+   "likes": 84,
+   "comments": 1,
+   "shares": 0
+  },
+  "seed": true
+ }
+]
