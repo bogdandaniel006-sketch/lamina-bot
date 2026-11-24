@@ -1,10 +1,10 @@
 name: Preparar carrusel
 on:
   schedule:
-    # Lunes, miércoles y viernes. Dos horas UTC para cubrir horario de invierno y de verano;
+    # Todos los días. Dos horas UTC para cubrir horario de invierno y de verano;
     # el script solo actúa a partir de las 17:30 de Madrid y una vez al día.
-    - cron: "25 15 * * 1,3,5"
-    - cron: "25 16 * * 1,3,5"
+    - cron: "25 15 * * *"
+    - cron: "25 16 * * *"
   workflow_dispatch:
     inputs:
       force:

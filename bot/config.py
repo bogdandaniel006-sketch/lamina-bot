@@ -8,7 +8,7 @@ REFS = ROOT / "assets" / "refs"
 
 TZ = "Europe/Madrid"
 # Días de publicación (0=lunes ... 6=domingo) y hora a partir de la cual se prepara el borrador
-POST_WEEKDAYS = [int(x) for x in os.getenv("POST_WEEKDAYS", "0,2,4").split(",")]
+POST_WEEKDAYS = [int(x) for x in os.getenv("POST_WEEKDAYS", "0,1,2,3,4,5,6").split(",")]
 POST_HOUR = int(os.getenv("POST_HOUR", "17"))
 POST_MINUTE = int(os.getenv("POST_MINUTE", "30"))
 SLIDES = 3

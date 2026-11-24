@@ -1,6 +1,6 @@
 # lamina-bot · carruseles automáticos para @danidemiguel_
 
-Lunes, miércoles y viernes a las 17:30 (hora de Madrid) prepara un carrusel de 3 fotos para TikTok
+Todos los días a las 17:30 (hora de Madrid) prepara un carrusel de 3 fotos para TikTok
 y lo deja como **borrador en tu bandeja de TikTok**. Tú solo abres la notificación y pulsas *Publicar*.
 
 ## Cómo funciona
@@ -15,7 +15,7 @@ y lo deja como **borrador en tu bandeja de TikTok**. Tú solo abres la notificac
 ## Workflows (pestaña *Actions*)
 | Workflow | Cuándo | Para qué |
 |---|---|---|
-| Preparar carrusel | L-X-V 17:30 | Genera y envía el borrador. Botón *Run workflow* + *force* para mandarlo ya. |
+| Preparar carrusel | Diario 17:30 | Genera y envía el borrador. Botón *Run workflow* + *force* para mandarlo ya. |
 | Métricas y aprendizaje | Diario 8:10 | Actualiza estadísticas |
 | Informe semanal | Domingo | Resumen por email |
 | Vista previa (sin subir) | Manual | Genera un carrusel en `docs/preview/` para verlo sin mandarlo |
