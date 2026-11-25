@@ -2,6 +2,7 @@ name: Métricas y aprendizaje
 on:
   schedule:
     - cron: "10 7 * * *"
+    - cron: "40 12 * * *"
   workflow_dispatch:
 concurrency: lamina-bot
 permissions:
