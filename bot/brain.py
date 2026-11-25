@@ -73,8 +73,21 @@ def score(m: dict) -> float:
     return math.log1p(v + 2 * l + 5 * c + 10 * s)
 
 
+MIN_AGE_DAYS = 3  # un post necesita unos días para acumular visitas antes de compararlo
+
+
+def _mature(p) -> bool:
+    if p.get("seed"):
+        return True
+    try:
+        age = datetime.now(timezone.utc) - datetime.fromisoformat(p["created_at"])
+        return age.total_seconds() >= MIN_AGE_DAYS * 86400
+    except Exception:
+        return False
+
+
 def _scored(history):
-    return [p for p in history if p.get("metrics") and p["metrics"].get("views") is not None]
+    return [p for p in history if p.get("metrics") and p["metrics"].get("views") is not None and _mature(p)]
 
 
 def choose(history: list[dict], rng: random.Random | None = None) -> dict:
