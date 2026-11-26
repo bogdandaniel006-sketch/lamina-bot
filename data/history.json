@@ -319,5 +319,23 @@
   },
   "tiktok_id": "7712169143302098198",
   "url": "https://www.tiktok.com/@danidemiguel_/video/7712169143302098198?utm_campaign=tt4d_open_api&utm_source=sbawvsu0ct6f2ibs8n"
+ },
+ {
+  "id": "20261126-1840",
+  "local_date": "2026-11-26",
+  "created_at": "2026-11-26T17:41:15+00:00",
+  "texts": [
+   "Qué pereza estudiar para sacar un 10 😩",
+   "Qué ganas haciéndolo todo en danidemiguel.com desde el portátil gratis 😎💻",
+   "Entra en danidemiguel.com y saca el 10 en PAU 🎯💯"
+  ],
+  "title": "El truco para sacar un 10 en Dibujo Técnico 📐💻",
+  "caption": "Así es como preparo los temas en la mitad de tiempo y sin gastar hojas ni reglas. Entra en danidemiguel.com y practica gratis para el examen. #dibujotecnico #2bachillerato #PAU #ebau #selectividad",
+  "format": "antes_despues",
+  "scene": "instituto",
+  "hook": "resultado",
+  "publish_id": "p_inbox_url~v2.7712536576106137622",
+  "status": "SEND_TO_USER_INBOX",
+  "metrics": null
  }
 ]
