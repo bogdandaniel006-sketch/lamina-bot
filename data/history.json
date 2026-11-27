@@ -345,5 +345,23 @@
   },
   "tiktok_id": "7712537696337464598",
   "url": "https://www.tiktok.com/@danidemiguel_/video/7712537696337464598?utm_campaign=tt4d_open_api&utm_source=sbawvsu0ct6f2ibs8n"
+ },
+ {
+  "id": "20261127-1805",
+  "local_date": "2026-11-27",
+  "created_at": "2026-11-27T17:05:45+00:00",
+  "texts": [
+   "Horas haciendo láminas para sacar un 10 😩📐",
+   "Ahora resuelvo tangencias en el portátil gratis y en minutos 😎💻",
+   "Practica gratis en danidemiguel.com y revienta la PAU 🚀🎯"
+  ],
+  "title": "El truco para sacar un 10 en la PAU de dibujo técnico 📐🎯",
+  "caption": "Ahorra horas de láminas a mano y practica directamente desde tu ordenador. Entra en danidemiguel.com 💻📐 #dibujotecnico #2bachillerato #PAU #bachillerato #selectividad",
+  "format": "problema_solucion",
+  "scene": "escritorio_dia",
+  "hook": "resultado",
+  "publish_id": "p_inbox_url~v2.7712898707053807638",
+  "status": "SEND_TO_USER_INBOX",
+  "metrics": null
  }
 ]
