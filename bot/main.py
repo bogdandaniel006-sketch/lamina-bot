@@ -2,7 +2,7 @@
 
   prepare [--force]   Si toca publicar hoy: decide, genera imágenes y monta las 3 slides en docs/media/<id>/
   upload              Envía el carrusel preparado a la bandeja de TikTok (cuando las imágenes ya están online)
-  upload-video MP4 GUION  Envía un vídeo animado (video/) a la bandeja de TikTok y lo apunta en el historial
+  upload-video MP4 GUION  Publica un vídeo animado (video/) en privado con su texto (o a borradores) y lo apunta
   metrics             Actualiza visualizaciones/likes/etc. de los posts y aprende
   report              Escribe el informe semanal en report.md
   preview             Genera un carrusel de prueba en docs/preview/ (no sube nada)
@@ -135,13 +135,21 @@ def cmd_upload():
 
 
 def cmd_upload_video(video: str, guion: str):
-    """Sube un vídeo animado (de video/) a la bandeja de TikTok y lo apunta en el historial,
-    para que ese día ya no se genere carrusel."""
+    """Publica un vídeo animado (de video/) en PRIVADO con su texto y hashtags. Si el bot aún no tiene
+    el permiso video.publish, lo manda a la bandeja como borrador. Lo apunta en el historial para que
+    ese día ya no se genere carrusel."""
     g = json.loads(Path(guion).read_text(encoding="utf-8"))
+    caption = g.get("descripcion_tiktok") or g.get("titulo", "")
     token = tiktok.access_token()
-    pub = tiktok.upload_video_draft(token, Path(video))
-    st = tiktok.wait_status(token, pub)
-    print("Estado TikTok:", st)
+    modo = "privado"
+    try:
+        pub = tiktok.post_video_private(token, Path(video), caption)
+    except RuntimeError as e:
+        print(f"No se pudo publicar en privado ({e}); lo mando a borradores.")
+        modo = "borrador"
+        pub = tiktok.upload_video_draft(token, Path(video))
+    st = tiktok.wait_status(token, pub, timeout_s=600)
+    print("Estado TikTok:", st, "· modo:", modo)
     if st.get("status") == "FAILED":
         raise RuntimeError(f"TikTok rechazó el vídeo: {st}")
     now = datetime.now(ZoneInfo(config.TZ))
@@ -149,11 +157,11 @@ def cmd_upload_video(video: str, guion: str):
     history.append({
         "id": now.strftime("%Y%m%d-%H%M") + "-video", "local_date": now.date().isoformat(), "created_at": brain.now_iso(),
         "format": "video", "tipo": g.get("tipo", "historia"), "guion": Path(guion).stem,
-        "title": g.get("titulo", ""), "caption": g.get("descripcion_tiktok", ""),
+        "title": g.get("titulo", ""), "caption": caption,
         "texts": [e.get("narracion", "") for e in g.get("escenas", [])][:3],
-        "publish_id": pub, "status": st.get("status"), "metrics": None})
+        "publish_id": pub, "status": st.get("status"), "modo": modo, "metrics": None})
     save_history(history)
-    gh_output("titulo", g.get("titulo", ""))
+    gh_output("modo", modo)
 
 
 def _norm(s):

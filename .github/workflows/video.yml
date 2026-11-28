@@ -71,12 +71,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           {
-            echo "🎬 **Tienes un vídeo nuevo en TikTok.** Abre la app con @danidemiguel_ → Bandeja de entrada → Notificaciones del sistema, revísalo, añade un sonido si quieres y publícalo."
+            if [ "${{ steps.subir.outputs.modo }}" = "privado" ]; then
+              echo "🎬 **Vídeo nuevo publicado en privado en TikTok**, ya con su texto y hashtags. Abre la app con @danidemiguel_ → tu perfil → el vídeo (con el candado) → ··· → Configuración de privacidad → Todos, para hacerlo público."
+            else
+              echo "🎬 **Tienes un vídeo nuevo en la bandeja de TikTok** (borrador). Abre la app con @danidemiguel_ → Bandeja de entrada → Notificaciones del sistema, pega el texto de abajo y publícalo."
+            fi
             echo
-            echo "**Texto para la publicación** (cópialo al publicar):"
+            echo "**Texto de la publicación:**"
             echo
             echo '```'
-            cat "video/salida/${{ inputs.guion }}.txt" 2>/dev/null || echo "${{ steps.subir.outputs.titulo }}"
+            python3 -c "import json;g=json.load(open('video/historias/${{ inputs.guion }}.json'));print(g.get('descripcion_tiktok') or g.get('titulo',''))"
             echo '```'
           } > aviso.md
-          gh issue create --title "🎬 Vídeo listo para publicar - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md --assignee "${{ github.repository_owner }}"
+          gh issue create --title "🎬 Vídeo nuevo en TikTok - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md --assignee "${{ github.repository_owner }}"

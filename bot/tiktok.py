@@ -11,7 +11,7 @@ from . import config
 
 API = "https://open.tiktokapis.com/v2"
 TOKEN_FILE = config.DATA / "tiktok_token.enc"
-SCOPES = "user.info.basic,video.upload,video.list"
+SCOPES = "user.info.basic,video.upload,video.publish,video.list"
 
 
 # ---------- token (guardado cifrado en el repo para poder renovarlo en cada ejecución) ----------
@@ -89,27 +89,50 @@ def upload_photo_draft(token: str, image_urls: list[str], title: str, descriptio
     return _post("/post/publish/content/init/", token, body)["publish_id"]
 
 
-def upload_video_draft(token: str, path: Path) -> str:
-    """Sube un vídeo a la bandeja de TikTok (borrador): Dani lo revisa, le pone texto/sonido y publica."""
+def _subir_archivo(upload_url: str, path: Path, chunk: int, n: int):
     size = path.stat().st_size
-    if size > 64 * 1024 * 1024:
-        chunk = 32 * 1024 * 1024
-        n = size // chunk
-    else:
-        chunk, n = size, 1
-    d = _post("/post/publish/inbox/video/init/", token, {
-        "source_info": {"source": "FILE_UPLOAD", "video_size": size, "chunk_size": chunk, "total_chunk_count": n}})
     with open(path, "rb") as f:
         for i in range(n):
             ini = i * chunk
             fin = size - 1 if i == n - 1 else ini + chunk - 1
             f.seek(ini)
             datos = f.read(fin - ini + 1)
-            r = requests.put(d["upload_url"], data=datos, timeout=300, headers={
+            r = requests.put(upload_url, data=datos, timeout=300, headers={
                 "Content-Type": "video/mp4", "Content-Length": str(len(datos)),
                 "Content-Range": f"bytes {ini}-{fin}/{size}"})
             if r.status_code not in (200, 201, 206):
                 raise RuntimeError(f"TikTok rechazó la subida del vídeo ({r.status_code}): {r.text[:300]}")
+
+
+def _trozos(path: Path):
+    size = path.stat().st_size
+    if size > 64 * 1024 * 1024:
+        chunk = 32 * 1024 * 1024
+        return size, chunk, size // chunk
+    return size, size, 1
+
+
+def upload_video_draft(token: str, path: Path) -> str:
+    """Sube un vídeo a la bandeja de TikTok (borrador, sin texto: la API no deja ponerlo)."""
+    size, chunk, n = _trozos(path)
+    d = _post("/post/publish/inbox/video/init/", token, {
+        "source_info": {"source": "FILE_UPLOAD", "video_size": size, "chunk_size": chunk, "total_chunk_count": n}})
+    _subir_archivo(d["upload_url"], path, chunk, n)
+    return d["publish_id"]
+
+
+def post_video_private(token: str, path: Path, caption: str) -> str:
+    """Publica el vídeo directamente en PRIVADO ('solo yo') con la descripción y los hashtags ya puestos.
+    Dani lo pasa a público desde la app. Necesita el permiso video.publish."""
+    info = _post("/post/publish/creator_info/query/", token, {})
+    opciones = info.get("privacy_level_options") or ["SELF_ONLY"]
+    nivel = "SELF_ONLY" if "SELF_ONLY" in opciones else opciones[-1]
+    size, chunk, n = _trozos(path)
+    d = _post("/post/publish/video/init/", token, {
+        "post_info": {"title": caption[:2200], "privacy_level": nivel, "disable_comment": False,
+                      "disable_duet": False, "disable_stitch": False, "video_cover_timestamp_ms": 1500},
+        "source_info": {"source": "FILE_UPLOAD", "video_size": size, "chunk_size": chunk, "total_chunk_count": n}})
+    _subir_archivo(d["upload_url"], path, chunk, n)
     return d["publish_id"]
 
 
