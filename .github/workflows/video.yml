@@ -79,4 +79,4 @@ jobs:
             cat "video/salida/${{ inputs.guion }}.txt" 2>/dev/null || echo "${{ steps.subir.outputs.titulo }}"
             echo '```'
           } > aviso.md
-          gh issue create --title "🎬 Vídeo listo para publicar - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md
+          gh issue create --title "🎬 Vídeo listo para publicar - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md --assignee "${{ github.repository_owner }}"

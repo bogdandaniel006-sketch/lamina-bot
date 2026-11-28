@@ -59,4 +59,4 @@ jobs:
                   f"\n\n_Formato {h['format']} · escena {h['scene']} · gancho {h['hook']}_")
           open("aviso.md", "w").write(body)
           PY
-          gh issue create --title "📲 Carrusel listo para publicar - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md
+          gh issue create --title "📲 Carrusel listo para publicar - $(TZ=Europe/Madrid date +%d/%m)" --body-file aviso.md --assignee "${{ github.repository_owner }}"
