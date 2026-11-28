@@ -1,0 +1,213 @@
+{
+  "titulo": "Tangencias explicadas en 40 segundos",
+  "tipo": "explicacion",
+  "descripcion_tiktok": "Si no entiendes las tangencias, mira esto 👀📐 #dibujotecnico #tangencias #2bachillerato #PAU #selectividad",
+  "voz": "es-ES-ElviraNeural",
+  "velocidad": "+6%",
+  "reparto": {
+    "pablo": {
+      "color": "#4dabf7",
+      "pelo": "pincho",
+      "pelo_color": "#1f1f2e",
+      "gafas": true,
+      "piel": "clara",
+      "ojos_color": "#2f6fb3"
+    }
+  },
+  "escenas": [
+    {
+      "fondo": "aula",
+      "narracion": "Si las tangencias te parecen chino, en cuarenta segundos lo vas a pillar.",
+      "destacar": [
+        "tangencias"
+      ],
+      "camara": "enfoque",
+      "foco": "pablo",
+      "actores": [
+        {
+          "id": "pablo",
+          "x": 0.5,
+          "cara": "agotado"
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "pablo",
+          "hace": "agobiado",
+          "palabra": "chino"
+        },
+        {
+          "quien": "pablo",
+          "hace": "cara",
+          "cara": "feliz",
+          "palabra": "pillar"
+        }
+      ]
+    },
+    {
+      "fondo": "cuaderno",
+      "narracion": "Una recta es tangente a una circunferencia cuando la toca en un solo punto.",
+      "destacar": [
+        "solo",
+        "punto"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "figura",
+          "id": "c",
+          "forma": "circulo",
+          "color": "#4dabf7",
+          "x": 0.5,
+          "y": 0.52,
+          "escala": 0.9
+        },
+        {
+          "tipo": "regla",
+          "id": "recta",
+          "x": 0.5,
+          "y": 0.404,
+          "escala": 0.9
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "c",
+          "hace": "dibujar",
+          "palabra": "recta",
+          "dur": 1.2
+        },
+        {
+          "quien": "recta",
+          "hace": "aparecer",
+          "palabra": "tangente"
+        },
+        {
+          "hace": "destellos",
+          "x": 0.5,
+          "y": 0.42,
+          "palabra": "punto"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Sin cortarla. Solo rozándola.",
+      "destacar": [
+        "rozándola"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "tangencia",
+          "id": "tg",
+          "x": 0.5,
+          "y": 0.52,
+          "escala": 1.1
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "tg",
+          "hace": "dibujar",
+          "t": 0.1,
+          "dur": 2.4
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Y el truco que lo resuelve casi todo: el radio que va al punto de tangencia siempre es perpendicular a la recta.",
+      "destacar": [
+        "perpendicular"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "tangencia",
+          "id": "tg",
+          "x": 0.5,
+          "y": 0.5,
+          "escala": 1.1,
+          "radios": true
+        },
+        {
+          "tipo": "texto",
+          "id": "nov",
+          "texto": "90°",
+          "x": 0.5,
+          "y": 0.73,
+          "tam": 170,
+          "color": "#ffd43b"
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "nov",
+          "hace": "aparecer",
+          "palabra": "perpendicular"
+        },
+        {
+          "quien": "nov",
+          "hace": "crecer",
+          "palabra": "recta",
+          "factor": 1.2
+        }
+      ]
+    },
+    {
+      "fondo": "bokeh_azul",
+      "narracion": "Con eso sacas el centro de cualquier enlace. Y en la PAU caen casi todos los años.",
+      "destacar": [
+        "PAU"
+      ],
+      "camara": "zoom_out",
+      "objetos": [
+        {
+          "tipo": "calendario",
+          "id": "cal",
+          "x": 0.5,
+          "y": 0.5,
+          "escala": 1.2,
+          "texto": "PAU",
+          "mes": "JUNIO"
+        },
+        {
+          "tipo": "check",
+          "id": "ok",
+          "x": 0.72,
+          "y": 0.66,
+          "escala": 0.7
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "ok",
+          "hace": "aparecer",
+          "palabra": "caen"
+        }
+      ]
+    },
+    {
+      "fondo": "aula",
+      "narracion": "Ahora sí lo pillas, ¿a que sí?",
+      "camara": "enfoque",
+      "foco": "pablo",
+      "actores": [
+        {
+          "id": "pablo",
+          "x": 0.5,
+          "cara": "muy_feliz"
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "pablo",
+          "hace": "celebrar",
+          "t": 0.2,
+          "dur": "fin"
+        }
+      ]
+    }
+  ]
+}

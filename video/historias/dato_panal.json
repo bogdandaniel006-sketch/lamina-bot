@@ -1,0 +1,223 @@
+{
+  "titulo": "Las abejas saben geometría",
+  "tipo": "dato",
+  "descripcion_tiktok": "Las abejas eligieron la mejor figura posible 🐝📐 #geometria #dibujotecnico #curiosidades #2bachillerato",
+  "voz": "es-ES-AlvaroNeural",
+  "velocidad": "+6%",
+  "escenas": [
+    {
+      "fondo": "bokeh_calido",
+      "narracion": "¿Por qué las abejas hacen las celdas con forma de hexágono, y no de círculo?",
+      "destacar": [
+        "hexágono"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "panal",
+          "id": "p",
+          "x": 0.5,
+          "y": 0.55,
+          "escala": 1.05
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "p",
+          "hace": "contar",
+          "t": 0.1,
+          "dur": 2.2
+        }
+      ]
+    },
+    {
+      "fondo": "cuaderno",
+      "narracion": "Porque los círculos, al juntarlos, dejan huecos. Y eso es cera desperdiciada.",
+      "destacar": [
+        "huecos"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "cuadricula",
+          "id": "cs",
+          "objeto": "figura",
+          "item": {
+            "forma": "circulo",
+            "color": "#fcc419"
+          },
+          "filas": 3,
+          "columnas": 3,
+          "ancho": 780,
+          "alto": 780,
+          "escala_item": 0.62,
+          "x": 0.5,
+          "y": 0.53
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "cs",
+          "hace": "contar",
+          "palabra": "círculos",
+          "dur": 1.2
+        },
+        {
+          "hace": "texto",
+          "texto": "¡HUECOS!",
+          "x": 0.5,
+          "y": 0.8,
+          "palabra": "huecos",
+          "color": "#ff8787"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Solo hay tres polígonos regulares que encajan sin dejar ningún hueco: el triángulo, el cuadrado y el hexágono.",
+      "destacar": [
+        "tres"
+      ],
+      "camara": "fijo",
+      "objetos": [
+        {
+          "tipo": "figura",
+          "id": "t",
+          "forma": "triangulo",
+          "color": "#ff6b6b",
+          "x": 0.22,
+          "y": 0.52,
+          "escala": 0.55
+        },
+        {
+          "tipo": "figura",
+          "id": "c",
+          "forma": "cuadrado",
+          "color": "#4dabf7",
+          "x": 0.5,
+          "y": 0.52,
+          "escala": 0.55
+        },
+        {
+          "tipo": "figura",
+          "id": "h",
+          "forma": "hexagono",
+          "color": "#fcc419",
+          "x": 0.78,
+          "y": 0.52,
+          "escala": 0.55
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "t",
+          "hace": "aparecer",
+          "palabra": "triángulo"
+        },
+        {
+          "quien": "c",
+          "hace": "aparecer",
+          "palabra": "cuadrado"
+        },
+        {
+          "quien": "h",
+          "hace": "aparecer",
+          "palabra": "hexágono"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Y de los tres, el hexágono es el que encierra más espacio con menos pared.",
+      "destacar": [
+        "menos"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "barras",
+          "id": "b",
+          "x": 0.5,
+          "y": 0.5,
+          "alto": 560,
+          "datos": [
+            {
+              "etiqueta": "triángulo",
+              "valor": 4.56,
+              "decimales": 2,
+              "color": "#ff6b6b"
+            },
+            {
+              "etiqueta": "cuadrado",
+              "valor": 4.0,
+              "decimales": 2,
+              "color": "#4dabf7"
+            },
+            {
+              "etiqueta": "hexágono",
+              "valor": 3.72,
+              "decimales": 2,
+              "color": "#fcc419"
+            }
+          ]
+        },
+        {
+          "tipo": "texto",
+          "id": "lb",
+          "texto": "pared para la misma área",
+          "x": 0.5,
+          "y": 0.27,
+          "tam": 56
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "b",
+          "hace": "contar",
+          "palabra": "hexágono",
+          "dur": 1.8
+        }
+      ]
+    },
+    {
+      "fondo": "bokeh_calido",
+      "narracion": "Un matemático tardó hasta 1999 en demostrar que esa es la forma más eficiente. Las abejas ya lo sabían.",
+      "destacar": [
+        "1999"
+      ],
+      "camara": "zoom_out",
+      "objetos": [
+        {
+          "tipo": "contador",
+          "id": "an",
+          "x": 0.5,
+          "y": 0.4,
+          "desde": 1900,
+          "hasta": 1999,
+          "tam": 220,
+          "miles": false
+        },
+        {
+          "tipo": "panal",
+          "id": "p",
+          "x": 0.5,
+          "y": 0.7,
+          "escala": 0.7
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "an",
+          "hace": "contar",
+          "palabra": "matemático",
+          "dur": 2.0
+        },
+        {
+          "quien": "p",
+          "hace": "brillar",
+          "palabra": "abejas"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "titulo": "¿Por qué las alcantarillas son redondas?",
+  "tipo": "dato",
+  "descripcion_tiktok": "La respuesta es pura geometría 📐 #dibujotecnico #geometria #curiosidades #2bachillerato #PAU",
+  "voz": "es-ES-AlvaroNeural",
+  "velocidad": "+6%",
+  "reparto": {
+    "lucia": {
+      "color": "#ff6b6b",
+      "pelo": "coleta",
+      "pelo_color": "#4a2f20",
+      "piel": "media"
+    }
+  },
+  "escenas": [
+    {
+      "fondo": "bokeh_azul",
+      "narracion": "¿Por qué casi todas las tapas de alcantarilla son redondas?",
+      "destacar": [
+        "redondas"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "alcantarilla",
+          "id": "tapa",
+          "x": 0.5,
+          "y": 0.55,
+          "escala": 1.1
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "tapa",
+          "hace": "aparecer",
+          "t": 0.1
+        },
+        {
+          "quien": "tapa",
+          "hace": "girar",
+          "palabra": "redondas"
+        }
+      ]
+    },
+    {
+      "fondo": "calle",
+      "narracion": "No es por estética. Es por seguridad.",
+      "destacar": [
+        "seguridad"
+      ],
+      "camara": "zoom_out",
+      "actores": [
+        {
+          "id": "lucia",
+          "x": 0.3,
+          "mira": "derecha",
+          "cara": "pensativo"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "alcantarilla",
+          "id": "tapa",
+          "x": 0.72,
+          "y": 0.86,
+          "escala": 0.55
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "lucia",
+          "hace": "pensar",
+          "palabra": "estética"
+        },
+        {
+          "quien": "lucia",
+          "hace": "sorpresa",
+          "palabra": "seguridad"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Una tapa cuadrada, si la giras, se puede colar por el agujero en diagonal.",
+      "destacar": [
+        "diagonal"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "alcantarilla",
+          "id": "cuadrada",
+          "forma": "cuadrado",
+          "x": 0.5,
+          "y": 0.52,
+          "escala": 0.95
+        },
+        {
+          "tipo": "cruz",
+          "id": "mal",
+          "x": 0.78,
+          "y": 0.72,
+          "escala": 0.9
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "cuadrada",
+          "hace": "girar",
+          "palabra": "giras",
+          "dur": 1.0
+        },
+        {
+          "quien": "cuadrada",
+          "hace": "temblar",
+          "palabra": "colar"
+        },
+        {
+          "quien": "mal",
+          "hace": "aparecer",
+          "palabra": "agujero"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Porque la diagonal de un cuadrado mide un cuarenta y uno por ciento más que su lado.",
+      "destacar": [
+        "diagonal"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "contador",
+          "id": "num",
+          "x": 0.5,
+          "y": 0.5,
+          "desde": 0,
+          "hasta": 41,
+          "prefijo": "+",
+          "sufijo": "%",
+          "etiqueta": "diagonal vs. lado",
+          "tam": 240
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "num",
+          "hace": "aparecer",
+          "palabra": "diagonal"
+        },
+        {
+          "quien": "num",
+          "hace": "contar",
+          "palabra": "diagonal",
+          "dur": 1.8
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Pero un círculo mide lo mismo lo gires como lo gires. Tiene anchura constante.",
+      "destacar": [
+        "anchura",
+        "constante"
+      ],
+      "camara": "fijo",
+      "objetos": [
+        {
+          "tipo": "figura",
+          "id": "circ",
+          "forma": "circulo",
+          "color": "#4dabf7",
+          "ancho_cte": true,
+          "x": 0.45,
+          "y": 0.52,
+          "escala": 1.0
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "circ",
+          "hace": "dibujar",
+          "palabra": "círculo",
+          "dur": 1.0
+        },
+        {
+          "quien": "circ",
+          "hace": "girar",
+          "palabra": "gires",
+          "dur": 2.0
+        }
+      ]
+    },
+    {
+      "fondo": "bokeh",
+      "narracion": "Así que la tapa redonda nunca se cae dentro.",
+      "destacar": [
+        "nunca"
+      ],
+      "camara": "zoom_out",
+      "objetos": [
+        {
+          "tipo": "alcantarilla",
+          "id": "tapa",
+          "x": 0.5,
+          "y": 0.52,
+          "escala": 1.0
+        },
+        {
+          "tipo": "check",
+          "id": "bien",
+          "x": 0.76,
+          "y": 0.68,
+          "escala": 0.9
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "bien",
+          "hace": "aparecer",
+          "palabra": "nunca"
+        }
+      ]
+    },
+    {
+      "fondo": "cuaderno",
+      "narracion": "Y aquí viene lo curioso: el círculo no es la única figura que lo cumple.",
+      "destacar": [
+        "curioso"
+      ],
+      "transicion": "flash",
+      "camara": "zoom_in",
+      "actores": [
+        {
+          "id": "lucia",
+          "x": 0.22,
+          "mira": "derecha",
+          "escala": 0.85
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "figura",
+          "id": "rx",
+          "forma": "reuleaux",
+          "color": "#ff922b",
+          "x": 0.66,
+          "y": 0.5,
+          "escala": 0.9
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "lucia",
+          "hace": "sorpresa",
+          "palabra": "curioso"
+        },
+        {
+          "quien": "rx",
+          "hace": "aparecer",
+          "palabra": "única"
+        },
+        {
+          "quien": "rx",
+          "hace": "temblar",
+          "palabra": "cumple"
+        }
+      ]
+    },
+    {
+      "fondo": "cuaderno",
+      "narracion": "Esto es un triángulo de Reuleaux. Se dibuja con compás: tres arcos con centro en los vértices de un triángulo equilátero.",
+      "destacar": [
+        "Reuleaux",
+        "compás"
+      ],
+      "camara": "zoom_in",
+      "objetos": [
+        {
+          "tipo": "figura",
+          "id": "rx",
+          "forma": "reuleaux",
+          "color": "#ff922b",
+          "x": 0.5,
+          "y": 0.52,
+          "escala": 1.1
+        },
+        {
+          "tipo": "compas",
+          "id": "comp",
+          "x": 0.8,
+          "y": 0.3,
+          "escala": 0.55,
+          "rot": 20
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "rx",
+          "hace": "dibujar",
+          "palabra": "dibuja",
+          "dur": 2.6
+        },
+        {
+          "quien": "comp",
+          "hace": "aparecer",
+          "palabra": "compás"
+        },
+        {
+          "quien": "comp",
+          "hace": "flotar",
+          "palabra": "compás"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "narracion": "Y también tiene anchura constante. Por eso en algunas ciudades hay tapas con esta forma.",
+      "destacar": [
+        "anchura",
+        "constante"
+      ],
+      "camara": "fijo",
+      "objetos": [
+        {
+          "tipo": "figura",
+          "id": "rx",
+          "forma": "reuleaux",
+          "color": "#ff922b",
+          "ancho_cte": true,
+          "x": 0.45,
+          "y": 0.5,
+          "escala": 1.0
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "rx",
+          "hace": "girar",
+          "palabra": "también",
+          "dur": 3.0
+        }
+      ]
+    }
+  ]
+}

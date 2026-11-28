@@ -1,0 +1,4 @@
+skia-python>=87.6
+numpy>=1.24
+edge-tts>=7.0
+imageio-ffmpeg>=0.5

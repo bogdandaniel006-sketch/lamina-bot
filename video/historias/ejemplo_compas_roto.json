@@ -1,0 +1,535 @@
+{
+  "titulo": "El día que se rompieron todos los compases",
+  "descripcion_tiktok": "Nadie sabe por qué pasó… 😭📐 #dibujotecnico #2bachillerato #PAU #selectividad #estudiar",
+  "voz": "es-ES-AlvaroNeural",
+  "velocidad": "+8%",
+  "reparto": {
+    "lucia": {
+      "color": "#ff6b6b",
+      "pelo": "coleta",
+      "pelo_color": "#4a2f20",
+      "piel": "media"
+    },
+    "pablo": {
+      "color": "#4dabf7",
+      "pelo": "pincho",
+      "pelo_color": "#1f1f2e",
+      "gafas": true,
+      "piel": "clara",
+      "ojos_color": "#2f6fb3"
+    },
+    "marta": {
+      "color": "#51cf66",
+      "pelo": "melena",
+      "pelo_color": "#c98b3a",
+      "piel": "morena",
+      "ojos_color": "#3a7d44"
+    },
+    "dani": {
+      "color": "#845ef7",
+      "pelo": "flequillo",
+      "pelo_color": "#4a2f20",
+      "piel": "clara"
+    },
+    "profe": {
+      "color": "#495057",
+      "pelo": "calvo",
+      "pelo_color": "#9aa0a6",
+      "gafas": true,
+      "bigote": true,
+      "altura": 1.1,
+      "piel": "rosada"
+    }
+  },
+  "escenas": [
+    {
+      "fondo": "aula",
+      "narracion": "Esta clase tenía el examen de dibujo técnico de la PAU en tres días.",
+      "destacar": [
+        "PAU"
+      ],
+      "camara": "zoom_in",
+      "actores": [
+        {
+          "id": "profe",
+          "x": 0.17,
+          "cara": "serio",
+          "brazos": "señalar",
+          "mira": "derecha"
+        },
+        {
+          "id": "lucia",
+          "x": 0.5,
+          "mira": "izquierda"
+        },
+        {
+          "id": "pablo",
+          "x": 0.83,
+          "mira": "izquierda"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "calendario",
+          "x": 0.2,
+          "y": 0.27,
+          "escala": 0.8,
+          "capa": "detras",
+          "texto": "3",
+          "mes": "JUNIO"
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "calendario0",
+          "hace": "aparecer",
+          "palabra": "examen"
+        },
+        {
+          "quien": "lucia",
+          "hace": "sorpresa",
+          "palabra": "PAU"
+        },
+        {
+          "quien": "pablo",
+          "hace": "temblar",
+          "palabra": "tres"
+        }
+      ]
+    },
+    {
+      "fondo": "aula",
+      "narracion": "Pero esa misma mañana, a Pablo se le rompió el compás.",
+      "destacar": [
+        "compás"
+      ],
+      "camara": "enfoque",
+      "foco": "pablo",
+      "actores": [
+        {
+          "id": "pablo",
+          "x": 0.42,
+          "mira": "derecha"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "compas",
+          "x": 0.66,
+          "y": 0.56,
+          "escala": 0.75,
+          "rot": 0
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "compas0",
+          "hace": "romper",
+          "palabra": "rompió"
+        },
+        {
+          "quien": "pablo",
+          "hace": "sorpresa",
+          "palabra": "rompió"
+        },
+        {
+          "quien": "pablo",
+          "hace": "cara",
+          "cara": "triste",
+          "palabra": "compás"
+        }
+      ]
+    },
+    {
+      "fondo": "aula",
+      "narracion": "Y luego el de Lucía. Y el de Marta. Y el de toda la clase.",
+      "destacar": [
+        "toda"
+      ],
+      "camara": "zoom_out",
+      "actores": [
+        {
+          "id": "lucia",
+          "x": 0.25,
+          "mira": "derecha"
+        },
+        {
+          "id": "marta",
+          "x": 0.75,
+          "mira": "izquierda"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "compas",
+          "id": "c1",
+          "x": 0.25,
+          "y": 0.27,
+          "escala": 0.55
+        },
+        {
+          "tipo": "compas",
+          "id": "c2",
+          "x": 0.75,
+          "y": 0.27,
+          "escala": 0.55
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "c1",
+          "hace": "romper",
+          "palabra": "Lucía"
+        },
+        {
+          "quien": "c2",
+          "hace": "romper",
+          "palabra": "Marta"
+        },
+        {
+          "hace": "sacudir",
+          "palabra": "toda"
+        },
+        {
+          "quien": "lucia",
+          "hace": "llorar",
+          "palabra": "toda",
+          "dur": "fin"
+        },
+        {
+          "quien": "marta",
+          "hace": "temblar",
+          "palabra": "toda",
+          "dur": "fin"
+        }
+      ]
+    },
+    {
+      "fondo": "pasillo",
+      "narracion": "Nadie sabía qué estaba pasando. Y el profe estaba blanco.",
+      "camara": "enfoque",
+      "foco": "profe",
+      "actores": [
+        {
+          "id": "profe",
+          "x": 0.5,
+          "cara": "asustado"
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "profe",
+          "hace": "pensar",
+          "palabra": "Nadie"
+        },
+        {
+          "quien": "profe",
+          "hace": "temblar",
+          "palabra": "blanco",
+          "dur": "fin"
+        },
+        {
+          "hace": "texto",
+          "texto": "¿¿QUÉ??",
+          "x": 0.5,
+          "y": 0.3,
+          "palabra": "pasando"
+        }
+      ]
+    },
+    {
+      "fondo": "escenario",
+      "narracion": "Sin compás no hay tangencias. Sin tangencias no hay lámina.",
+      "destacar": [
+        "tangencias"
+      ],
+      "camara": "zoom_in",
+      "actores": [],
+      "objetos": [
+        {
+          "tipo": "lamina",
+          "x": 0.5,
+          "y": 0.5,
+          "escala": 1.35,
+          "estilo": "mal",
+          "inclinada": -3
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "lamina0",
+          "hace": "dibujar",
+          "palabra": "compás",
+          "dur": 1.4
+        },
+        {
+          "quien": "lamina0",
+          "hace": "temblar",
+          "palabra": "lámina"
+        },
+        {
+          "quien": "lamina0",
+          "hace": "desaparecer",
+          "momento": 0.93
+        }
+      ]
+    },
+    {
+      "fondo": "examen",
+      "narracion": "Y sin lámina… no hay aprobado.",
+      "destacar": [
+        "aprobado"
+      ],
+      "transicion": "flash",
+      "camara": "zoom_in",
+      "actores": [
+        {
+          "id": "lucia",
+          "x": 0.2,
+          "cara": "triste",
+          "mira": "derecha"
+        },
+        {
+          "id": "pablo",
+          "x": 0.8,
+          "cara": "triste",
+          "mira": "izquierda"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "examen",
+          "x": 0.5,
+          "y": 0.5,
+          "escala": 0.95,
+          "nota": "2",
+          "texto": "PAU"
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "examen0",
+          "hace": "aparecer",
+          "palabra": "aprobado"
+        },
+        {
+          "quien": "pablo",
+          "hace": "llorar",
+          "palabra": "aprobado",
+          "dur": "fin"
+        },
+        {
+          "quien": "lucia",
+          "hace": "agobiado",
+          "palabra": "aprobado",
+          "dur": "fin"
+        }
+      ]
+    },
+    {
+      "fondo": "habitacion",
+      "narracion": "Esa noche, Dani no podía dormir pensando en el examen.",
+      "camara": "zoom_in",
+      "actores": [
+        {
+          "id": "dani",
+          "x": 0.45,
+          "cara": "agotado",
+          "mira": "derecha"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "reloj",
+          "x": 0.5,
+          "y": 0.15,
+          "escala": 0.6,
+          "capa": "detras",
+          "velocidad": 4
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "dani",
+          "hace": "pensar",
+          "palabra": "pensando",
+          "dur": "fin"
+        }
+      ]
+    },
+    {
+      "fondo": "magia",
+      "narracion": "Hasta que encontró una web donde las láminas se hacen en el ordenador. Sin compás. Sin reglas. Gratis.",
+      "destacar": [
+        "Gratis"
+      ],
+      "transicion": "flash",
+      "camara": "zoom_in",
+      "actores": [
+        {
+          "id": "dani",
+          "x": 0.17,
+          "escala": 0.9,
+          "mira": "derecha"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "portatil",
+          "x": 0.64,
+          "y": 0.6,
+          "escala": 1.0
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "portatil0",
+          "hace": "aparecer",
+          "palabra": "web"
+        },
+        {
+          "quien": "portatil0",
+          "hace": "brillar",
+          "palabra": "web"
+        },
+        {
+          "quien": "dani",
+          "hace": "sorpresa",
+          "palabra": "web"
+        },
+        {
+          "quien": "dani",
+          "hace": "cara",
+          "cara": "muy_feliz",
+          "palabra": "ordenador"
+        },
+        {
+          "hace": "destellos",
+          "x": 0.62,
+          "y": 0.5,
+          "palabra": "Gratis"
+        },
+        {
+          "quien": "dani",
+          "hace": "saltar",
+          "palabra": "Gratis"
+        }
+      ]
+    },
+    {
+      "fondo": "aula",
+      "narracion": "Se lo pasó a toda la clase. Y esa semana practicaron más que nunca.",
+      "camara": "paneo_der",
+      "actores": [
+        {
+          "id": "lucia",
+          "x": 0.2,
+          "cara": "feliz",
+          "mira": "derecha"
+        },
+        {
+          "id": "dani",
+          "x": 0.5,
+          "cara": "feliz"
+        },
+        {
+          "id": "marta",
+          "x": 0.8,
+          "cara": "feliz",
+          "mira": "izquierda"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "movil",
+          "x": 0.5,
+          "y": 0.33,
+          "escala": 0.6,
+          "flotar": true
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "dani",
+          "hace": "saludar",
+          "palabra": "pasó"
+        },
+        {
+          "quien": "lucia",
+          "hace": "saltar",
+          "palabra": "clase"
+        },
+        {
+          "quien": "marta",
+          "hace": "saltar",
+          "palabra": "semana"
+        },
+        {
+          "quien": "dani",
+          "hace": "reir",
+          "palabra": "practicaron"
+        }
+      ]
+    },
+    {
+      "fondo": "examen",
+      "narracion": "Y el día de la PAU… todos sacaron más de un nueve.",
+      "destacar": [
+        "nueve"
+      ],
+      "transicion": "flash",
+      "camara": "zoom_out",
+      "actores": [
+        {
+          "id": "lucia",
+          "x": 0.18,
+          "cara": "feliz",
+          "mira": "derecha"
+        },
+        {
+          "id": "pablo",
+          "x": 0.82,
+          "cara": "feliz",
+          "mira": "izquierda"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "examen",
+          "x": 0.5,
+          "y": 0.5,
+          "escala": 0.95,
+          "nota": "9,5",
+          "texto": "PAU",
+          "inclinada": -5
+        }
+      ],
+      "eventos": [
+        {
+          "quien": "examen0",
+          "hace": "aparecer",
+          "palabra": "todos"
+        },
+        {
+          "quien": "lucia",
+          "hace": "celebrar",
+          "palabra": "nueve",
+          "dur": "fin"
+        },
+        {
+          "quien": "pablo",
+          "hace": "celebrar",
+          "palabra": "nueve",
+          "dur": "fin"
+        },
+        {
+          "hace": "confeti",
+          "x": 0.5,
+          "y": 0.5,
+          "palabra": "nueve"
+        }
+      ]
+    }
+  ],
+  "tipo": "historia"
+}

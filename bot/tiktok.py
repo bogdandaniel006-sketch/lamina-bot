@@ -89,6 +89,30 @@ def upload_photo_draft(token: str, image_urls: list[str], title: str, descriptio
     return _post("/post/publish/content/init/", token, body)["publish_id"]
 
 
+def upload_video_draft(token: str, path: Path) -> str:
+    """Sube un vídeo a la bandeja de TikTok (borrador): Dani lo revisa, le pone texto/sonido y publica."""
+    size = path.stat().st_size
+    if size > 64 * 1024 * 1024:
+        chunk = 32 * 1024 * 1024
+        n = size // chunk
+    else:
+        chunk, n = size, 1
+    d = _post("/post/publish/inbox/video/init/", token, {
+        "source_info": {"source": "FILE_UPLOAD", "video_size": size, "chunk_size": chunk, "total_chunk_count": n}})
+    with open(path, "rb") as f:
+        for i in range(n):
+            ini = i * chunk
+            fin = size - 1 if i == n - 1 else ini + chunk - 1
+            f.seek(ini)
+            datos = f.read(fin - ini + 1)
+            r = requests.put(d["upload_url"], data=datos, timeout=300, headers={
+                "Content-Type": "video/mp4", "Content-Length": str(len(datos)),
+                "Content-Range": f"bytes {ini}-{fin}/{size}"})
+            if r.status_code not in (200, 201, 206):
+                raise RuntimeError(f"TikTok rechazó la subida del vídeo ({r.status_code}): {r.text[:300]}")
+    return d["publish_id"]
+
+
 def publish_status(token: str, publish_id: str) -> dict:
     return _post("/post/publish/status/fetch/", token, {"publish_id": publish_id})
 

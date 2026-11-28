@@ -2,6 +2,7 @@
 
   prepare [--force]   Si toca publicar hoy: decide, genera imágenes y monta las 3 slides en docs/media/<id>/
   upload              Envía el carrusel preparado a la bandeja de TikTok (cuando las imágenes ya están online)
+  upload-video MP4 GUION  Envía un vídeo animado (video/) a la bandeja de TikTok y lo apunta en el historial
   metrics             Actualiza visualizaciones/likes/etc. de los posts y aprende
   report              Escribe el informe semanal en report.md
   preview             Genera un carrusel de prueba en docs/preview/ (no sube nada)
@@ -133,6 +134,28 @@ def cmd_upload():
     PENDING.unlink()
 
 
+def cmd_upload_video(video: str, guion: str):
+    """Sube un vídeo animado (de video/) a la bandeja de TikTok y lo apunta en el historial,
+    para que ese día ya no se genere carrusel."""
+    g = json.loads(Path(guion).read_text(encoding="utf-8"))
+    token = tiktok.access_token()
+    pub = tiktok.upload_video_draft(token, Path(video))
+    st = tiktok.wait_status(token, pub)
+    print("Estado TikTok:", st)
+    if st.get("status") == "FAILED":
+        raise RuntimeError(f"TikTok rechazó el vídeo: {st}")
+    now = datetime.now(ZoneInfo(config.TZ))
+    history = load_history()
+    history.append({
+        "id": now.strftime("%Y%m%d-%H%M") + "-video", "local_date": now.date().isoformat(), "created_at": brain.now_iso(),
+        "format": "video", "tipo": g.get("tipo", "historia"), "guion": Path(guion).stem,
+        "title": g.get("titulo", ""), "caption": g.get("descripcion_tiktok", ""),
+        "texts": [e.get("narracion", "") for e in g.get("escenas", [])][:3],
+        "publish_id": pub, "status": st.get("status"), "metrics": None})
+    save_history(history)
+    gh_output("titulo", g.get("titulo", ""))
+
+
 def _norm(s):
     return "".join(ch.lower() for ch in (s or "") if ch.isalnum())[:40]
 
@@ -218,6 +241,8 @@ def main(argv):
         cmd_prepare(force="--force" in argv)
     elif cmd == "upload":
         cmd_upload()
+    elif cmd == "upload-video":
+        cmd_upload_video(argv[2], argv[3])
     elif cmd == "metrics":
         cmd_metrics()
     elif cmd == "report":
