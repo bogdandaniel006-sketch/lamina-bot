@@ -52,6 +52,13 @@ jobs:
           name: video-${{ inputs.guion }}
           path: video/salida/
           retention-days: 7
+      - if: inputs.modo == 'vista_previa'
+        name: Guardar la vista previa en la rama 'vista-previa'
+        run: |
+          mkdir -p /tmp/vp && cp -r video/salida/. /tmp/vp/ && cd /tmp/vp
+          git init -q -b vista-previa && git add -A
+          git -c user.name=lamina-bot -c user.email=lamina-bot@users.noreply.github.com commit -qm "Vista previa: ${{ inputs.guion }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" vista-previa
       - if: inputs.modo == 'tiktok'
         id: subir
         name: Enviar a la bandeja de TikTok
